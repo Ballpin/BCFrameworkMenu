@@ -102,3 +102,7 @@ class BootstrapThreeMenu implements BootstrapThreeMenuInterface {
   }
 
 }
+
+var global = window || global;
+global.setBcMenu = setBcMenu;
+global.BootstrapThreeMenu = BootstrapThreeMenu;

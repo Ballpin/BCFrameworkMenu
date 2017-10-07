@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": ""
+    "build": "rm -rf dist && webpack --config webpack.config.prod.js"
   },
   "devDependencies": {
     "babel-preset-env": "^1.6.0",

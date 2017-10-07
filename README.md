@@ -53,8 +53,10 @@ through BC Menu system.
 
     ```
     // Run it with default settings. Default is Click to Toggle Menu.
-    <script>var bcmenu = new setBcMenu(BootstrapThreeMenu, '#bs-example-navbar-collapse-1')</script>
+    // setTimeout function will force the DOM to run the script on next cycle instead of first. 
+    // If you want it on the first one simple remove setTimeout function
+    <script>setTimeout(function() {return var bcmenu = new setBcMenu(BootstrapThreeMenu, '#bs-example-navbar-collapse-1')}, 0)</script>
     
     // If you want on hover then add true as last argument.
-    <script>var bcmenu = new setBcMenu(BootstrapThreeMenu, '#bs-example-navbar-collapse-1', true)</script>
+    <script>setTimeout(function() {return var bcmenu = new setBcMenu(BootstrapThreeMenu, '#bs-example-navbar-collapse-1', true)}, 0)</script>
     ```

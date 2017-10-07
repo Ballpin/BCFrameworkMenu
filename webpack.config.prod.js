@@ -26,7 +26,7 @@ module.exports = {
   entry: './src/index',
 
   output: {
-    filename: 'bc-menu-script.js',
+    filename: 'bc-menu-script-[hash].js',
     path: path.resolve(__dirname, 'dist')
   },
 
