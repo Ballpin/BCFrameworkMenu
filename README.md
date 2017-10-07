@@ -53,8 +53,8 @@ through BC Menu system.
 
     ```
     // Run it with default settings. Default is Click to Toggle Menu.
-    <script>const bcmenu = new setBcMenu(BootstrapThreeMenu, '#bs-example-navbar-collapse-1')</script>
+    <script>var bcmenu = new setBcMenu(BootstrapThreeMenu, '#bs-example-navbar-collapse-1')</script>
     
     // If you want on hover then add true as last argument.
-    <script>const bcmenu = new setBcMenu(BootstrapThreeMenu, '#bs-example-navbar-collapse-1', true)</script>
+    <script>var bcmenu = new setBcMenu(BootstrapThreeMenu, '#bs-example-navbar-collapse-1', true)</script>
     ```
