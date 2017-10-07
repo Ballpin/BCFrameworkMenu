@@ -43,7 +43,7 @@ class BootstrapThreeMenu implements BootstrapThreeMenuInterface {
       if (listItem.classList.contains('dropdown')) {
         if (this.hover) {
           // Add Style Tag to head if it does not exist in order to activate hover
-          if (document.getElementById('bs-menu-style') === null) {
+          if (document.getElementById('bc-bootstrap-menu') === null) {
             document.head.insertAdjacentHTML('beforeend', `
               <style id="bc-bootstrap-menu">
                 ${selector} .dropdown:hover > .dropdown-menu {
@@ -102,3 +102,7 @@ class BootstrapThreeMenu implements BootstrapThreeMenuInterface {
   }
 
 }
+
+var global = window || global;
+global.setBcMenu = setBcMenu;
+global.BootstrapThreeMenu = BootstrapThreeMenu;
