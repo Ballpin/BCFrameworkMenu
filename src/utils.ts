@@ -3,3 +3,7 @@ export function setAttributes(el, attrs) {
     el.setAttribute(key, attrs[key]);
   }
 }
+
+export function isTouchDeivce() {
+  return 'ontouchstart' in document.documentElement;
+}
