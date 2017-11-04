@@ -23,7 +23,10 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  entry: './src/index',
+  entry: [
+    'babel-polyfill',
+    './src/index'
+  ],
 
   output: {
     filename: 'bc-menu-script-[hash].js',
@@ -36,29 +39,7 @@ module.exports = {
         test: /\.ts(x?)$/,
         exclude: /node_modules/,
         loader: 'babel-loader?presets[]=es2015!ts-loader'
-
       },
-      {
-        test: /\.(scss|css)$/,
-
-        use: ExtractTextPlugin.extract({
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                sourceMap: true
-              }
-            },
-            {
-              loader: 'sass-loader',
-              options: {
-                sourceMap: true
-              }
-            }
-          ],
-          fallback: 'style-loader'
-        })
-      }
     ]
   },
 

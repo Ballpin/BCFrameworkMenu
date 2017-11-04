@@ -3,7 +3,7 @@ import { BootstrapThreeMenuInterface, setBcMenu } from './interfaces';
 
 class BootstrapThreeMenu implements BootstrapThreeMenuInterface {
 
-  private _navbarCollapse: Element;
+  private _navbarCollapse: any;
   private _navBarLists: NodeListOf<Element>;
   private _navBarListsItems: NodeListOf<Element>;
   private hover: boolean;
@@ -94,11 +94,27 @@ class BootstrapThreeMenu implements BootstrapThreeMenuInterface {
    */
   private _setLists(lists): void {
     for (const list of lists) {
-      if (list.parentElement === this._navbarCollapse) {
+      if (list.parentElement == this._navbarCollapse) {
         list.classList.add('nav', 'navbar-nav');
       } else if (list.parentNode.tagName === 'LI') {
         list.classList.add('dropdown-menu');
         list.parentNode.classList.add('dropdown');
+      }
+    }
+
+    // Set first addnavbar-nav to first ul
+    // IE11 FIX.
+    if (navigator.appName == 'Microsoft Internet Explorer' ||  !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv:11/))) {
+      console.log('Running Internet Explorer, Please use edge instead. IE is outdated.');
+
+      const collapseChildren = this._navbarCollapse.children;
+
+      for (let i = 0; i < collapseChildren.length; i++) {
+        const obj = collapseChildren[i];
+
+        if (obj.tagName === 'UL') {
+           obj.classList.add('navbar-nav');
+        }
       }
     }
   }
