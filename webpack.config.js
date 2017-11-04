@@ -50,7 +50,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: 'src/index.html'
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin()
   ],
 
   resolve: {
@@ -60,6 +61,7 @@ module.exports = {
   devServer: {
     port: 8000,
     inline: true,
-    progress: true
+    progress: true,
+    hot: true
   }
 };
